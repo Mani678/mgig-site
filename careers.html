@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="description" content="MGIG Energy Group – Integrated oil and gas company in Nigeria."/>
 <title>Careers | MGIG Energy Group</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
@@ -199,17 +199,186 @@ footer { background: var(--text-dark); color: rgba(255,255,255,0.75); }
 .footer-bottom-links a:hover { color: #fff; }
 
 /* ── RESPONSIVE ── */
+
+/* ============================================
+   MOBILE FIRST — full responsive overhaul
+   Targets: Android Chrome + Safari iPhone
+   ============================================ */
+
+/* Fix viewport for all browsers including Safari iOS */
+html { -webkit-text-size-adjust: 100%; }
+
 @media (max-width: 1024px) {
   .footer-top { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 768px) {
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-  .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+  .about-grid, .contact-grid, .sustain-grid,
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
+@media (max-width: 768px) {
+
+  /* ── NAV ── */
+  .nav-links, .nav-cta { display: none !important; }
+  .hamburger { display: flex !important; }
+  .nav-inner { padding: 0 1rem; height: 60px; }
+  .logo-text { font-size: 17px; }
+
+  /* ── PAGE HERO ── */
+  .page-hero { padding: 5rem 1.2rem 2.5rem; }
+  .page-hero h1 { font-size: 1.8rem !important; }
+  .page-hero p { font-size: 15px !important; }
+
+  /* ── HERO SLIDER ── */
+  .hero-wrap { height: 100svh; min-height: 520px; margin-top: 60px; }
+  .slide-title { font-size: 1.8rem !important; max-width: 100% !important; }
+  .slide-desc { font-size: 14px !important; max-width: 100% !important; }
+  .slide-content-inner { padding: 0 1.2rem !important; }
+  .slide-btns { flex-direction: column; gap: 0.8rem; }
+  .slide-btns a { text-align: center; padding: 12px 20px !important; font-size: 14px !important; }
+  .slider-arrows { display: none; }
+
+  /* ── STATS BAR ── */
+  .stats-inner,
+  [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .stat-item { padding: 1.2rem 1rem !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .stat-num { font-size: 1.8rem !important; }
+
+  /* ── ALL SECTIONS ── */
+  .section { padding: 3rem 1.2rem !important; }
+  .section-inner { padding: 0 !important; }
+  .section-title { font-size: 1.6rem !important; }
+  .section-sub { font-size: 15px !important; }
+
+  /* ── ALL GRIDS → SINGLE COLUMN ── */
+  .services-grid,
+  .projects-grid,
+  .news-grid,
+  .sustain-pillars,
+  .about-features,
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(auto-fit"],
+  [style*="grid-template-columns: repeat(auto-fit"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1.3fr"],
+  [style*="grid-template-columns:1fr 1.4fr"],
+  [style*="grid-template-columns:1fr 2fr"],
+  [style*="grid-template-columns:2fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+
+  /* ── ABOUT IMAGE BADGE ── */
+  .about-badge { right: 0 !important; bottom: -10px !important; }
+
+  /* ── INLINE IMAGES (height) ── */
+  [style*="height:420px"],
+  [style*="height: 420px"],
+  [style*="height:460px"],
+  [style*="height: 460px"],
+  [style*="height:380px"],
+  [style*="height: 380px"] {
+    height: 240px !important;
+  }
+
+  /* ── CAREERS BAND ── */
+  .careers-inner,
+  [style*="display:flex;align-items:center;justify-content:space-between"] {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+  }
+  .careers-inner h2 { font-size: 1.4rem !important; }
+
+  /* ── BUTTONS ── */
+  .btn-primary, .btn-outline, .btn-white {
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+  }
+
+  /* ── CONTACT QUICK LINKS ── */
+  .contact-info { margin-bottom: 2rem; }
+
+  /* ── SUSTAINABILITY DARK SECTION ── */
+  .sustain-section .section-inner > div,
+  [style*="grid-template-columns:1fr 2fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── PARTNERS ROW ── */
+  .partners-row { gap: 1rem !important; }
+  .partner-logo { font-size: 12px !important; padding: 0.6rem 1rem !important; }
+
+  /* ── FOOTER ── */
+  .footer-top { grid-template-columns: 1fr !important; gap: 2rem !important; padding: 2.5rem 1.2rem !important; }
+  .footer-bottom { flex-direction: column !important; gap: 1rem !important; text-align: center !important; padding: 1.2rem !important; }
+  .footer-bottom-links { flex-wrap: wrap !important; justify-content: center !important; gap: 1rem !important; }
+
+  /* ── WHATSAPP BTN ── */
+  .whatsapp-btn { width: 50px; height: 50px; font-size: 22px; bottom: 1.2rem; right: 1.2rem; }
+  .back-top { bottom: 5rem; right: 1.2rem; }
+
+  /* ── FORM ── */
+  .form-row,
+  [style*="grid-template-columns:1fr 1fr;gap:1rem"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── NAV SERVICE DROPDOWN ── */
+  .dropdown { position: static !important; box-shadow: none !important; border: none !important; }
+
+  /* ── HSE STATS ── */
+  [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── LEADERSHIP / AWARDS CARDS ── */
+  [style*="grid-template-columns:repeat(auto-fit,minmax(240px"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  [style*="grid-template-columns:repeat(auto-fit,minmax(200px"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  [style*="grid-template-columns:repeat(auto-fit,minmax(220px"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── SERVICES JUMP BAR ── */
+  [style*="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center"] a {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+  }
+
+  /* ── INLINE FLEX ROWS ── */
+  [style*="display:flex;align-items:center;justify-content:space-between;gap:2rem"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* ── ORDER FIX for alternating service layouts ── */
+  [style*="order:2"] { order: unset !important; }
+  [style*="order:1"] { order: unset !important; }
+}
+
+@media (max-width: 400px) {
+  .slide-title { font-size: 1.5rem !important; }
+  .section-title { font-size: 1.4rem !important; }
+  [style*="grid-template-columns:repeat(auto-fit,minmax(240px"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(auto-fit,minmax(200px"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+}
 
 </style>
 </head>
