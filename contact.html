@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="MGIG Energy Group – Integrated oil and gas company in Nigeria."/>
+<title>Contact Us | MGIG Energy Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<style>
+/* ── MGIG SHARED STYLES ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --blue: #005B9F;
+  --blue-dark: #003F6E;
+  --blue-light: #E8F2FA;
+  --blue-mid: #1A7DC4;
+  --white: #ffffff;
+  --gray-light: #F5F7FA;
+  --gray-mid: #E0E6ED;
+  --gray-text: #6B7A8D;
+  --text-dark: #0D1B2A;
+  --accent: #F5A623;
+  --green: #27AE60;
+  --radius: 4px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: #fff; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--gray-mid);
+  backdrop-filter: blur(6px); transition: box-shadow 0.3s;
+}
+.nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 68px; position: relative;
+}
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark {
+  width: 44px; height: 44px; background: var(--blue);
+  border-radius: 6px; display: flex; align-items: center;
+  justify-content: center; color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px;
+}
+.logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); letter-spacing: 0.5px; }
+.logo-sub { font-size: 10px; color: var(--gray-text); letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: -2px; }
+.nav-links { display: flex; gap: 0; list-style: none; }
+.nav-links > li { position: relative; }
+.nav-links > li > a {
+  font-size: 14px; font-weight: 500; color: var(--text-dark);
+  text-decoration: none; padding: 8px 14px; display: block;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.nav-links > li > a:hover, .nav-links > li > a.active { color: var(--blue); border-bottom-color: var(--blue); }
+/* Dropdown */
+.has-dropdown:hover .dropdown { display: block; }
+.dropdown {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: #fff; border: 1px solid var(--gray-mid);
+  border-top: 3px solid var(--blue); min-width: 220px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10); border-radius: 0 0 6px 6px; z-index: 100;
+}
+.dropdown a {
+  display: block; padding: 10px 16px; font-size: 14px;
+  color: var(--text-dark); text-decoration: none; transition: background 0.15s;
+  border-bottom: 1px solid var(--gray-light);
+}
+.dropdown a:last-child { border-bottom: none; }
+.dropdown a:hover { background: var(--blue-light); color: var(--blue); }
+.nav-cta {
+  background: var(--blue); color: #fff; padding: 10px 22px;
+  border: none; border-radius: var(--radius); font-size: 14px;
+  font-weight: 600; cursor: pointer; text-decoration: none; transition: background 0.2s; white-space: nowrap;
+}
+.nav-cta:hover { background: var(--blue-dark); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--text-dark); display: block; transition: all 0.3s; }
+.mobile-menu {
+  display: none; position: absolute; top: 68px; left: 0; width: 100%;
+  background: #fff; border-bottom: 1px solid var(--gray-mid);
+  padding: 1rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block; padding: 12px 2rem; font-size: 15px; font-weight: 500;
+  color: var(--text-dark); text-decoration: none; border-bottom: 1px solid var(--gray-light);
+}
+.mobile-menu a:hover { color: var(--blue); background: var(--blue-light); }
+.mobile-menu .mobile-cta {
+  margin: 1rem 2rem 0.5rem; display: block; background: var(--blue);
+  color: #fff; text-align: center; border-radius: var(--radius); padding: 12px;
+}
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--blue-mid) 100%);
+  padding: 7rem 2rem 4rem; margin-top: 68px; position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=60') center/cover;
+  opacity: 0.12;
+}
+.page-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+.page-hero .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.8rem; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: #fff; line-height: 1.2; max-width: 700px; margin-bottom: 1rem; }
+.page-hero p { font-size: 17px; color: rgba(255,255,255,0.80); max-width: 580px; line-height: 1.7; }
+.breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb span { color: rgba(255,255,255,0.4); }
+
+/* ── COMMON SECTION ── */
+.section { padding: 5rem 2rem; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 0.8rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 1rem; line-height: 1.25; }
+.section-sub { font-size: 17px; color: var(--gray-text); max-width: 600px; line-height: 1.7; }
+.divider { width: 48px; height: 3px; background: var(--blue); margin: 1.2rem 0; }
+.gray-bg { background: var(--gray-light); }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  background: var(--blue); color: #fff; padding: 13px 28px;
+  border-radius: var(--radius); font-size: 15px; font-weight: 600;
+  text-decoration: none; border: 2px solid var(--blue); transition: all 0.2s; display: inline-block;
+}
+.btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+.btn-outline {
+  background: transparent; color: var(--blue); padding: 13px 28px;
+  border-radius: var(--radius); font-size: 15px; font-weight: 600;
+  text-decoration: none; border: 2px solid var(--blue); transition: all 0.2s; display: inline-block;
+}
+.btn-outline:hover { background: var(--blue); color: #fff; }
+.btn-white {
+  background: #fff; color: var(--blue); padding: 13px 28px;
+  border-radius: var(--radius); font-size: 15px; font-weight: 600;
+  text-decoration: none; border: 2px solid #fff; transition: all 0.2s; display: inline-block;
+}
+.btn-white:hover { background: transparent; color: #fff; }
+
+/* ── WHATSAPP BUTTON ── */
+.whatsapp-btn {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366; color: #fff; border: none;
+  font-size: 26px; cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none;
+  transition: transform 0.2s;
+}
+.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-tooltip {
+  position: fixed; bottom: 5.2rem; right: 5.2rem; z-index: 998;
+  background: var(--text-dark); color: #fff; font-size: 13px; font-weight: 500;
+  padding: 6px 12px; border-radius: 4px; white-space: nowrap; pointer-events: none;
+}
+
+/* ── BACK TO TOP ── */
+.back-top {
+  position: fixed; bottom: 6rem; right: 2rem; z-index: 998;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--blue); color: #fff; border: none;
+  font-size: 18px; cursor: pointer; display: none;
+  align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,91,159,0.3); transition: background 0.2s;
+}
+.back-top.show { display: flex; }
+.back-top:hover { background: var(--blue-dark); }
+
+/* ── FOOTER ── */
+footer { background: var(--text-dark); color: rgba(255,255,255,0.75); }
+.footer-top {
+  max-width: 1280px; margin: 0 auto; padding: 4rem 2rem 3rem;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+}
+.footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 1rem; color: rgba(255,255,255,0.6); }
+.footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #fff; }
+.social-links { display: flex; gap: 10px; margin-top: 1.5rem; }
+.social-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;
+  justify-content: center; color: rgba(255,255,255,0.6); font-size: 13px;
+  text-decoration: none; transition: all 0.2s; font-weight: 700;
+}
+.social-btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.4rem 2rem; max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; font-size: 13px;
+}
+.footer-bottom-links { display: flex; gap: 1.5rem; }
+.footer-bottom-links a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-bottom-links a:hover { color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+}
+
+
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">MG</div>
+      <div><span class="logo-text">MGIG</span><span class="logo-sub">Energy Group</span></div>
+    </a>
+    <ul class="nav-links"><li class="has-dropdown"><a href="about.html" class="">About Us ▾</a><div class="dropdown"><a href="about.html#story">Our Story</a><a href="about.html#leadership">Leadership Team</a><a href="about.html#mission">Mission & Vision</a><a href="about.html#awards">Awards & Certifications</a></div></li><li class="has-dropdown"><a href="services.html" class="">Services ▾</a><div class="dropdown"><a href="services.html#ep">Exploration & Production</a><a href="services.html#engineering">Engineering & Consulting</a><a href="services.html#oilfield">Oil Field Services</a><a href="services.html#downstream">Downstream & Refining</a><a href="services.html#trading">Trading & Supply</a><a href="services.html#supplychain">Supply Chain</a></div></li><li><a href="projects.html" class="">Projects</a></li><li><a href="hse.html" class="">HSE</a></li><li><a href="local-content.html" class="">Local Content</a></li><li><a href="news.html" class="">News</a></li><li><a href="careers.html" class="">Careers</a></li></ul>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="hse.html">HSE</a>
+    <a href="local-content.html">Local Content</a>
+    <a href="news.html">News</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="mobile-cta">Contact Us</a>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Contact</div>
+    <p class="eyebrow">Get In Touch</p>
+    <h1>We'd Love to Hear From You</h1>
+    <p>Whether you're a potential client, partner, vendor, or job seeker — reach out and our team will respond promptly.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;">
+      <!-- CONTACT INFO -->
+      <div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#0D1B2A;margin-bottom:1.5rem;">Contact Information</h2>
+        <div style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start;">
+          <div style="width:44px;height:44px;border-radius:50%;background:#E8F2FA;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📍</div>
+          <div>
+            <strong style="display:block;font-size:13px;color:#6B7A8D;margin-bottom:3px;">Head Office</strong>
+            <span style="font-size:15px;font-weight:500;color:#0D1B2A;">Trans Amadi Industrial Layout,<br>Port Harcourt, Rivers State, Nigeria</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start;">
+          <div style="width:44px;height:44px;border-radius:50%;background:#E8F2FA;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📞</div>
+          <div>
+            <strong style="display:block;font-size:13px;color:#6B7A8D;margin-bottom:3px;">Phone</strong>
+            <a href="tel:09036912596" style="font-size:15px;font-weight:500;color:#0D1B2A;text-decoration:none;">09036912596</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start;">
+          <div style="width:44px;height:44px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">💬</div>
+          <div>
+            <strong style="display:block;font-size:13px;color:#6B7A8D;margin-bottom:3px;">WhatsApp</strong>
+            <a href="https://wa.me/2349036912596" target="_blank" style="font-size:15px;font-weight:500;color:#25D366;text-decoration:none;">Chat with us on WhatsApp</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start;">
+          <div style="width:44px;height:44px;border-radius:50%;background:#E8F2FA;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">✉️</div>
+          <div>
+            <strong style="display:block;font-size:13px;color:#6B7A8D;margin-bottom:3px;">Email</strong>
+            <span style="font-size:15px;font-weight:500;color:#0D1B2A;">info@mgig.com.ng</span><br>
+            <span style="font-size:13px;color:#6B7A8D;">(Update when domain is live)</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:2rem;align-items:flex-start;">
+          <div style="width:44px;height:44px;border-radius:50%;background:#E8F2FA;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🕐</div>
+          <div>
+            <strong style="display:block;font-size:13px;color:#6B7A8D;margin-bottom:3px;">Business Hours</strong>
+            <span style="font-size:15px;font-weight:500;color:#0D1B2A;">Monday – Friday: 8:00am – 5:00pm WAT</span>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <h3 style="font-size:16px;font-weight:700;color:#0D1B2A;margin-bottom:1rem;">Quick Contacts</h3>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="mailto:info@mgig.com.ng" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#F5F7FA;border-radius:4px;text-decoration:none;border:1px solid #E0E6ED;transition:background 0.2s;" onmouseover="this.style.background='#E8F2FA'" onmouseout="this.style.background='#F5F7FA'">
+            <span style="font-size:14px;color:#0D1B2A;font-weight:500;">General Enquiries</span>
+            <span style="font-size:13px;color:#005B9F;">→</span>
+          </a><a href="mailto:info@mgig.com.ng" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#F5F7FA;border-radius:4px;text-decoration:none;border:1px solid #E0E6ED;transition:background 0.2s;" onmouseover="this.style.background='#E8F2FA'" onmouseout="this.style.background='#F5F7FA'">
+            <span style="font-size:14px;color:#0D1B2A;font-weight:500;">Services & Projects</span>
+            <span style="font-size:13px;color:#005B9F;">→</span>
+          </a><a href="mailto:info@mgig.com.ng" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#F5F7FA;border-radius:4px;text-decoration:none;border:1px solid #E0E6ED;transition:background 0.2s;" onmouseover="this.style.background='#E8F2FA'" onmouseout="this.style.background='#F5F7FA'">
+            <span style="font-size:14px;color:#0D1B2A;font-weight:500;">Careers & Recruitment</span>
+            <span style="font-size:13px;color:#005B9F;">→</span>
+          </a><a href="mailto:info@mgig.com.ng" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#F5F7FA;border-radius:4px;text-decoration:none;border:1px solid #E0E6ED;transition:background 0.2s;" onmouseover="this.style.background='#E8F2FA'" onmouseout="this.style.background='#F5F7FA'">
+            <span style="font-size:14px;color:#0D1B2A;font-weight:500;">Media & Press</span>
+            <span style="font-size:13px;color:#005B9F;">→</span>
+          </a><a href="mailto:info@mgig.com.ng" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#F5F7FA;border-radius:4px;text-decoration:none;border:1px solid #E0E6ED;transition:background 0.2s;" onmouseover="this.style.background='#E8F2FA'" onmouseout="this.style.background='#F5F7FA'">
+            <span style="font-size:14px;color:#0D1B2A;font-weight:500;">Vendor Registration</span>
+            <span style="font-size:13px;color:#005B9F;">→</span>
+          </a><a href="mailto:info@mgig.com.ng" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#F5F7FA;border-radius:4px;text-decoration:none;border:1px solid #E0E6ED;transition:background 0.2s;" onmouseover="this.style.background='#E8F2FA'" onmouseout="this.style.background='#F5F7FA'">
+            <span style="font-size:14px;color:#0D1B2A;font-weight:500;">HSE Matters</span>
+            <span style="font-size:13px;color:#005B9F;">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div id="vendors">
+        <div style="background:#fff;border-radius:6px;padding:2.5rem;border:1px solid #E0E6ED;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+          <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:0.5rem;color:#0D1B2A;">Send Us a Message</h2>
+          <p style="font-size:14px;color:#6B7A8D;margin-bottom:1.8rem;">Fill in the form below and we'll get back to you within 24 hours.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div>
+              <label style="font-size:13px;font-weight:500;display:block;margin-bottom:5px;">First Name *</label>
+              <input type="text" placeholder="John" style="width:100%;padding:10px 14px;border:1px solid #E0E6ED;border-radius:4px;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#005B9F'" onblur="this.style.borderColor='#E0E6ED'"/>
+            </div>
+            <div>
+              <label style="font-size:13px;font-weight:500;display:block;margin-bottom:5px;">Last Name *</label>
+              <input type="text" placeholder="Doe" style="width:100%;padding:10px 14px;border:1px solid #E0E6ED;border-radius:4px;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#005B9F'" onblur="this.style.borderColor='#E0E6ED'"/>
+            </div>
+          </div>
+          <div style="margin-top:1rem;">
+            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:5px;">Company / Organisation</label>
+            <input type="text" placeholder="Your company name" style="width:100%;padding:10px 14px;border:1px solid #E0E6ED;border-radius:4px;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#005B9F'" onblur="this.style.borderColor='#E0E6ED'"/>
+          </div>
+          <div style="margin-top:1rem;">
+            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:5px;">Email Address *</label>
+            <input type="email" placeholder="john@company.com" style="width:100%;padding:10px 14px;border:1px solid #E0E6ED;border-radius:4px;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#005B9F'" onblur="this.style.borderColor='#E0E6ED'"/>
+          </div>
+          <div style="margin-top:1rem;">
+            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:5px;">Phone Number</label>
+            <input type="tel" placeholder="+234 800 000 0000" style="width:100%;padding:10px 14px;border:1px solid #E0E6ED;border-radius:4px;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#005B9F'" onblur="this.style.borderColor='#E0E6ED'"/>
+          </div>
+          <div style="margin-top:1rem;">
+            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:5px;">Subject *</label>
+            <select style="width:100%;padding:10px 14px;border:1px solid #E0E6ED;border-radius:4px;font-size:14px;font-family:inherit;outline:none;background:#fff;" onfocus="this.style.borderColor='#005B9F'" onblur="this.style.borderColor='#E0E6ED'">
+              <option value="">Select a subject</option>
+              <option>General Enquiry</option>
+              <option>Services & Projects</option>
+              <option>Careers & Jobs</option>
+              <option>Vendor / Supplier Registration</option>
+              <option>Partnerships & Investments</option>
+              <option>Media & Press</option>
+              <option>HSE Concern</option>
+            </select>
+          </div>
+          <div style="margin-top:1rem;">
+            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:5px;">Message *</label>
+            <textarea placeholder="Tell us how we can help you..." rows="5" style="width:100%;padding:10px 14px;border:1px solid #E0E6ED;border-radius:4px;font-size:14px;font-family:inherit;outline:none;resize:vertical;" onfocus="this.style.borderColor='#005B9F'" onblur="this.style.borderColor='#E0E6ED'"></textarea>
+          </div>
+          <button onclick="submitForm()" style="width:100%;background:#005B9F;color:#fff;border:none;padding:13px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;margin-top:1.2rem;transition:background 0.2s;" onmouseover="this.style.background='#003F6E'" onmouseout="this.style.background='#005B9F'">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function submitForm(){
+  alert('Thank you for your message. The MGIG team will respond within 24 hours.');
+}
+</script>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="gap:10px;display:flex;align-items:center;">
+        <div class="logo-mark">MG</div>
+        <div><span class="logo-text" style="color:#fff;">MGIG</span><span class="logo-sub" style="color:rgba(255,255,255,0.5);">Energy Group</span></div>
+      </a>
+      <p>MGIG is a leading integrated oil and gas company in Nigeria, delivering end-to-end energy solutions across West Africa with excellence, integrity, and local expertise.</p>
+      <div class="social-links">
+        <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-btn" aria-label="X">𝕏</a>
+        <a href="#" class="social-btn" aria-label="Facebook">f</a>
+        <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About MGIG</a></li>
+        <li><a href="about.html#leadership">Leadership</a></li>
+        <li><a href="about.html#mission">Mission & Vision</a></li>
+        <li><a href="hse.html">HSE Policy</a></li>
+        <li><a href="local-content.html">Local Content</a></li>
+        <li><a href="news.html">News & Media</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#ep">Exploration & Production</a></li>
+        <li><a href="services.html#engineering">Engineering & Consulting</a></li>
+        <li><a href="services.html#oilfield">Oil Field Services</a></li>
+        <li><a href="services.html#downstream">Downstream & Refining</a></li>
+        <li><a href="services.html#trading">Trading & Supply</a></li>
+        <li><a href="services.html#supplychain">Supply Chain</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="contact.html">Get In Touch</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html#vendors">Vendor Registration</a></li>
+        <li><a href="contact.html">Media Enquiries</a></li>
+        <li><a href="tel:09036912596">📞 09036912596</a></li>
+        <li><a href="https://wa.me/2349036912596" target="_blank">💬 WhatsApp Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.08);">
+    <div class="footer-bottom">
+      <span>© 2026 MGIG Energy Group. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/2349036912596" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp" aria-label="WhatsApp">💬</a>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+  function toggleMenu(){
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  window.addEventListener('scroll',()=>{
+    document.getElementById('navbar').style.boxShadow = window.scrollY>40?'0 2px 20px rgba(0,0,0,0.08)':'none';
+    const b=document.getElementById('backTop');
+    if(b) b.classList.toggle('show',window.scrollY>400);
+  });
+</script></body></html>

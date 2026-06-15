@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="MGIG Energy Group – Integrated oil and gas company in Nigeria."/>
+<title>Careers | MGIG Energy Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<style>
+/* ── MGIG SHARED STYLES ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --blue: #005B9F;
+  --blue-dark: #003F6E;
+  --blue-light: #E8F2FA;
+  --blue-mid: #1A7DC4;
+  --white: #ffffff;
+  --gray-light: #F5F7FA;
+  --gray-mid: #E0E6ED;
+  --gray-text: #6B7A8D;
+  --text-dark: #0D1B2A;
+  --accent: #F5A623;
+  --green: #27AE60;
+  --radius: 4px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: #fff; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--gray-mid);
+  backdrop-filter: blur(6px); transition: box-shadow 0.3s;
+}
+.nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 68px; position: relative;
+}
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark {
+  width: 44px; height: 44px; background: var(--blue);
+  border-radius: 6px; display: flex; align-items: center;
+  justify-content: center; color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px;
+}
+.logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); letter-spacing: 0.5px; }
+.logo-sub { font-size: 10px; color: var(--gray-text); letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: -2px; }
+.nav-links { display: flex; gap: 0; list-style: none; }
+.nav-links > li { position: relative; }
+.nav-links > li > a {
+  font-size: 14px; font-weight: 500; color: var(--text-dark);
+  text-decoration: none; padding: 8px 14px; display: block;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.nav-links > li > a:hover, .nav-links > li > a.active { color: var(--blue); border-bottom-color: var(--blue); }
+/* Dropdown */
+.has-dropdown:hover .dropdown { display: block; }
+.dropdown {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: #fff; border: 1px solid var(--gray-mid);
+  border-top: 3px solid var(--blue); min-width: 220px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10); border-radius: 0 0 6px 6px; z-index: 100;
+}
+.dropdown a {
+  display: block; padding: 10px 16px; font-size: 14px;
+  color: var(--text-dark); text-decoration: none; transition: background 0.15s;
+  border-bottom: 1px solid var(--gray-light);
+}
+.dropdown a:last-child { border-bottom: none; }
+.dropdown a:hover { background: var(--blue-light); color: var(--blue); }
+.nav-cta {
+  background: var(--blue); color: #fff; padding: 10px 22px;
+  border: none; border-radius: var(--radius); font-size: 14px;
+  font-weight: 600; cursor: pointer; text-decoration: none; transition: background 0.2s; white-space: nowrap;
+}
+.nav-cta:hover { background: var(--blue-dark); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--text-dark); display: block; transition: all 0.3s; }
+.mobile-menu {
+  display: none; position: absolute; top: 68px; left: 0; width: 100%;
+  background: #fff; border-bottom: 1px solid var(--gray-mid);
+  padding: 1rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block; padding: 12px 2rem; font-size: 15px; font-weight: 500;
+  color: var(--text-dark); text-decoration: none; border-bottom: 1px solid var(--gray-light);
+}
+.mobile-menu a:hover { color: var(--blue); background: var(--blue-light); }
+.mobile-menu .mobile-cta {
+  margin: 1rem 2rem 0.5rem; display: block; background: var(--blue);
+  color: #fff; text-align: center; border-radius: var(--radius); padding: 12px;
+}
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--blue-mid) 100%);
+  padding: 7rem 2rem 4rem; margin-top: 68px; position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=60') center/cover;
+  opacity: 0.12;
+}
+.page-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+.page-hero .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.8rem; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: #fff; line-height: 1.2; max-width: 700px; margin-bottom: 1rem; }
+.page-hero p { font-size: 17px; color: rgba(255,255,255,0.80); max-width: 580px; line-height: 1.7; }
+.breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb span { color: rgba(255,255,255,0.4); }
+
+/* ── COMMON SECTION ── */
+.section { padding: 5rem 2rem; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 0.8rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 1rem; line-height: 1.25; }
+.section-sub { font-size: 17px; color: var(--gray-text); max-width: 600px; line-height: 1.7; }
+.divider { width: 48px; height: 3px; background: var(--blue); margin: 1.2rem 0; }
+.gray-bg { background: var(--gray-light); }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  background: var(--blue); color: #fff; padding: 13px 28px;
+  border-radius: var(--radius); font-size: 15px; font-weight: 600;
+  text-decoration: none; border: 2px solid var(--blue); transition: all 0.2s; display: inline-block;
+}
+.btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+.btn-outline {
+  background: transparent; color: var(--blue); padding: 13px 28px;
+  border-radius: var(--radius); font-size: 15px; font-weight: 600;
+  text-decoration: none; border: 2px solid var(--blue); transition: all 0.2s; display: inline-block;
+}
+.btn-outline:hover { background: var(--blue); color: #fff; }
+.btn-white {
+  background: #fff; color: var(--blue); padding: 13px 28px;
+  border-radius: var(--radius); font-size: 15px; font-weight: 600;
+  text-decoration: none; border: 2px solid #fff; transition: all 0.2s; display: inline-block;
+}
+.btn-white:hover { background: transparent; color: #fff; }
+
+/* ── WHATSAPP BUTTON ── */
+.whatsapp-btn {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366; color: #fff; border: none;
+  font-size: 26px; cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none;
+  transition: transform 0.2s;
+}
+.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-tooltip {
+  position: fixed; bottom: 5.2rem; right: 5.2rem; z-index: 998;
+  background: var(--text-dark); color: #fff; font-size: 13px; font-weight: 500;
+  padding: 6px 12px; border-radius: 4px; white-space: nowrap; pointer-events: none;
+}
+
+/* ── BACK TO TOP ── */
+.back-top {
+  position: fixed; bottom: 6rem; right: 2rem; z-index: 998;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--blue); color: #fff; border: none;
+  font-size: 18px; cursor: pointer; display: none;
+  align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,91,159,0.3); transition: background 0.2s;
+}
+.back-top.show { display: flex; }
+.back-top:hover { background: var(--blue-dark); }
+
+/* ── FOOTER ── */
+footer { background: var(--text-dark); color: rgba(255,255,255,0.75); }
+.footer-top {
+  max-width: 1280px; margin: 0 auto; padding: 4rem 2rem 3rem;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+}
+.footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 1rem; color: rgba(255,255,255,0.6); }
+.footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #fff; }
+.social-links { display: flex; gap: 10px; margin-top: 1.5rem; }
+.social-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;
+  justify-content: center; color: rgba(255,255,255,0.6); font-size: 13px;
+  text-decoration: none; transition: all 0.2s; font-weight: 700;
+}
+.social-btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.4rem 2rem; max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; font-size: 13px;
+}
+.footer-bottom-links { display: flex; gap: 1.5rem; }
+.footer-bottom-links a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-bottom-links a:hover { color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+}
+
+
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">MG</div>
+      <div><span class="logo-text">MGIG</span><span class="logo-sub">Energy Group</span></div>
+    </a>
+    <ul class="nav-links"><li class="has-dropdown"><a href="about.html" class="">About Us ▾</a><div class="dropdown"><a href="about.html#story">Our Story</a><a href="about.html#leadership">Leadership Team</a><a href="about.html#mission">Mission & Vision</a><a href="about.html#awards">Awards & Certifications</a></div></li><li class="has-dropdown"><a href="services.html" class="">Services ▾</a><div class="dropdown"><a href="services.html#ep">Exploration & Production</a><a href="services.html#engineering">Engineering & Consulting</a><a href="services.html#oilfield">Oil Field Services</a><a href="services.html#downstream">Downstream & Refining</a><a href="services.html#trading">Trading & Supply</a><a href="services.html#supplychain">Supply Chain</a></div></li><li><a href="projects.html" class="">Projects</a></li><li><a href="hse.html" class="">HSE</a></li><li><a href="local-content.html" class="">Local Content</a></li><li><a href="news.html" class="">News</a></li><li><a href="careers.html" class="active">Careers</a></li></ul>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="hse.html">HSE</a>
+    <a href="local-content.html">Local Content</a>
+    <a href="news.html">News</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="mobile-cta">Contact Us</a>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Careers</div>
+    <p class="eyebrow">Join Our Team</p>
+    <h1>Build Your Career in Energy</h1>
+    <p>MGIG offers exciting careers across oil and gas exploration, engineering, trading, supply chain, and corporate functions. Join a team that values excellence, invests in people, and delivers impact.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Why MGIG</p>
+    <h2 class="section-title">A Place to Grow</h2>
+    <div class="divider"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2.5rem;">
+      <div style="background:#F5F7FA;border-radius:6px;padding:1.8rem;text-align:center;border:1px solid #E0E6ED;">
+        <div style="font-size:36px;margin-bottom:0.8rem;">📈</div>
+        <h3 style="font-size:15px;font-weight:700;color:#003F6E;margin-bottom:0.5rem;">Career Growth</h3>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;">Structured career paths, mentoring, and promotion-from-within culture across all divisions.</p>
+      </div><div style="background:#F5F7FA;border-radius:6px;padding:1.8rem;text-align:center;border:1px solid #E0E6ED;">
+        <div style="font-size:36px;margin-bottom:0.8rem;">🎓</div>
+        <h3 style="font-size:15px;font-weight:700;color:#003F6E;margin-bottom:0.5rem;">Learning & Development</h3>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;">Sponsored professional certifications, technical training, and leadership development programmes.</p>
+      </div><div style="background:#F5F7FA;border-radius:6px;padding:1.8rem;text-align:center;border:1px solid #E0E6ED;">
+        <div style="font-size:36px;margin-bottom:0.8rem;">💰</div>
+        <h3 style="font-size:15px;font-weight:700;color:#003F6E;margin-bottom:0.5rem;">Competitive Compensation</h3>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;">Market-leading salaries, performance bonuses, medical cover, and pension contributions.</p>
+      </div><div style="background:#F5F7FA;border-radius:6px;padding:1.8rem;text-align:center;border:1px solid #E0E6ED;">
+        <div style="font-size:36px;margin-bottom:0.8rem;">🌍</div>
+        <h3 style="font-size:15px;font-weight:700;color:#003F6E;margin-bottom:0.5rem;">Pan-African Projects</h3>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;">Work on landmark projects across Nigeria and West Africa with exposure to international best practices.</p>
+      </div><div style="background:#F5F7FA;border-radius:6px;padding:1.8rem;text-align:center;border:1px solid #E0E6ED;">
+        <div style="font-size:36px;margin-bottom:0.8rem;">⛑️</div>
+        <h3 style="font-size:15px;font-weight:700;color:#003F6E;margin-bottom:0.5rem;">Safety First Culture</h3>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;">An organisation where every employee's safety and wellbeing is genuinely protected and valued.</p>
+      </div><div style="background:#F5F7FA;border-radius:6px;padding:1.8rem;text-align:center;border:1px solid #E0E6ED;">
+        <div style="font-size:36px;margin-bottom:0.8rem;">🤝</div>
+        <h3 style="font-size:15px;font-weight:700;color:#003F6E;margin-bottom:0.5rem;">Inclusive Workplace</h3>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;">A diverse, respectful environment where Nigerian talent is celebrated and empowered to lead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gray-bg">
+  <div class="section-inner">
+    <p class="eyebrow">Open Roles</p>
+    <h2 class="section-title">Current Vacancies</h2>
+    <div class="divider"></div>
+    <p class="section-sub" style="margin-bottom:2.5rem;">We are currently recruiting for the following positions. All roles are based in Nigeria.</p>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+    <div style="background:#fff;border:1px solid #E0E6ED;border-radius:6px;padding:1.8rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;transition:all 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,91,159,0.10)'" onmouseout="this.style.boxShadow=''">
+      <div style="flex:1;min-width:240px;">
+        <h3 style="font-size:17px;font-weight:700;color:#0D1B2A;margin-bottom:0.4rem;">Senior Reservoir Engineer</h3>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+          <span style="font-size:12px;background:#E8F2FA;color:#005B9F;padding:3px 10px;border-radius:12px;font-weight:600;">Exploration & Production</span>
+          <span style="font-size:12px;color:#6B7A8D;">📍 Port Harcourt</span>
+          <span style="font-size:12px;color:#6B7A8D;">⏱ Full-Time</span>
+        </div>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;"><strong style="color:#0D1B2A;">Requirements:</strong> 8+ years E&P experience, BSc/MSc Petroleum Engineering, proficiency in reservoir simulation software (Eclipse/CMG).</p>
+      </div>
+      <a href="contact.html" class="btn-primary" style="white-space:nowrap;font-size:13px;padding:10px 20px;">Apply Now</a>
+    </div>
+    <div style="background:#fff;border:1px solid #E0E6ED;border-radius:6px;padding:1.8rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;transition:all 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,91,159,0.10)'" onmouseout="this.style.boxShadow=''">
+      <div style="flex:1;min-width:240px;">
+        <h3 style="font-size:17px;font-weight:700;color:#0D1B2A;margin-bottom:0.4rem;">Project Manager – EPC</h3>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+          <span style="font-size:12px;background:#E8F2FA;color:#005B9F;padding:3px 10px;border-radius:12px;font-weight:600;">Engineering</span>
+          <span style="font-size:12px;color:#6B7A8D;">📍 Port Harcourt / Lagos</span>
+          <span style="font-size:12px;color:#6B7A8D;">⏱ Full-Time</span>
+        </div>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;"><strong style="color:#0D1B2A;">Requirements:</strong> 10+ years project management in oil & gas EPC, PMP or Prince2 certified, track record of $50M+ projects.</p>
+      </div>
+      <a href="contact.html" class="btn-primary" style="white-space:nowrap;font-size:13px;padding:10px 20px;">Apply Now</a>
+    </div>
+    <div style="background:#fff;border:1px solid #E0E6ED;border-radius:6px;padding:1.8rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;transition:all 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,91,159,0.10)'" onmouseout="this.style.boxShadow=''">
+      <div style="flex:1;min-width:240px;">
+        <h3 style="font-size:17px;font-weight:700;color:#0D1B2A;margin-bottom:0.4rem;">Pipeline Integrity Engineer</h3>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+          <span style="font-size:12px;background:#E8F2FA;color:#005B9F;padding:3px 10px;border-radius:12px;font-weight:600;">Oil Field Services</span>
+          <span style="font-size:12px;color:#6B7A8D;">📍 Niger Delta</span>
+          <span style="font-size:12px;color:#6B7A8D;">⏱ Full-Time</span>
+        </div>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;"><strong style="color:#0D1B2A;">Requirements:</strong> 5+ years pipeline inspection and integrity management, ASNT Level II NDT certification preferred.</p>
+      </div>
+      <a href="contact.html" class="btn-primary" style="white-space:nowrap;font-size:13px;padding:10px 20px;">Apply Now</a>
+    </div>
+    <div style="background:#fff;border:1px solid #E0E6ED;border-radius:6px;padding:1.8rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;transition:all 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,91,159,0.10)'" onmouseout="this.style.boxShadow=''">
+      <div style="flex:1;min-width:240px;">
+        <h3 style="font-size:17px;font-weight:700;color:#0D1B2A;margin-bottom:0.4rem;">Supply Chain Coordinator</h3>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+          <span style="font-size:12px;background:#E8F2FA;color:#005B9F;padding:3px 10px;border-radius:12px;font-weight:600;">Supply Chain</span>
+          <span style="font-size:12px;color:#6B7A8D;">📍 Port Harcourt</span>
+          <span style="font-size:12px;color:#6B7A8D;">⏱ Full-Time</span>
+        </div>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;"><strong style="color:#0D1B2A;">Requirements:</strong> 3+ years supply chain/logistics in oil & gas, proficiency in ERP systems, strong vendor management skills.</p>
+      </div>
+      <a href="contact.html" class="btn-primary" style="white-space:nowrap;font-size:13px;padding:10px 20px;">Apply Now</a>
+    </div>
+    <div style="background:#fff;border:1px solid #E0E6ED;border-radius:6px;padding:1.8rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;transition:all 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,91,159,0.10)'" onmouseout="this.style.boxShadow=''">
+      <div style="flex:1;min-width:240px;">
+        <h3 style="font-size:17px;font-weight:700;color:#0D1B2A;margin-bottom:0.4rem;">HSE Officer</h3>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+          <span style="font-size:12px;background:#E8F2FA;color:#005B9F;padding:3px 10px;border-radius:12px;font-weight:600;">HSE</span>
+          <span style="font-size:12px;color:#6B7A8D;">📍 Various Sites</span>
+          <span style="font-size:12px;color:#6B7A8D;">⏱ Full-Time</span>
+        </div>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;"><strong style="color:#0D1B2A;">Requirements:</strong> 3+ years HSE in oil & gas operations, NEBOSH IGC or equivalent, HUET certified.</p>
+      </div>
+      <a href="contact.html" class="btn-primary" style="white-space:nowrap;font-size:13px;padding:10px 20px;">Apply Now</a>
+    </div>
+    <div style="background:#fff;border:1px solid #E0E6ED;border-radius:6px;padding:1.8rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;transition:all 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,91,159,0.10)'" onmouseout="this.style.boxShadow=''">
+      <div style="flex:1;min-width:240px;">
+        <h3 style="font-size:17px;font-weight:700;color:#0D1B2A;margin-bottom:0.4rem;">Graduate Engineer 2026</h3>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+          <span style="font-size:12px;background:#E8F2FA;color:#005B9F;padding:3px 10px;border-radius:12px;font-weight:600;">All Divisions</span>
+          <span style="font-size:12px;color:#6B7A8D;">📍 Port Harcourt</span>
+          <span style="font-size:12px;color:#6B7A8D;">⏱ Graduate Programme</span>
+        </div>
+        <p style="font-size:13px;color:#6B7A8D;line-height:1.6;"><strong style="color:#0D1B2A;">Requirements:</strong> Fresh graduate or up to 2 years experience, BSc/BEng in Engineering or Geosciences, NYSC completed.</p>
+      </div>
+      <a href="contact.html" class="btn-primary" style="white-space:nowrap;font-size:13px;padding:10px 20px;">Apply Now</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+    <div>
+      <p class="eyebrow">Graduate Programme</p>
+      <h2 class="section-title">MGIG Graduate Development Programme 2026</h2>
+      <div class="divider"></div>
+      <p style="font-size:16px;color:#444;line-height:1.8;margin-bottom:1rem;">Our flagship 18-month Graduate Development Programme offers exceptional Nigerian graduates the opportunity to build a world-class career in energy. Participants rotate across multiple divisions, receive intensive mentoring, and complete a capstone project.</p>
+      <p style="font-size:16px;color:#444;line-height:1.8;margin-bottom:1.5rem;">We recruit engineers, geoscientists, finance professionals, and business graduates. NYSC discharge certificate required.</p>
+      <a href="contact.html" class="btn-primary">Apply for 2026 Programme</a>
+    </div>
+    <div style="background:#003F6E;border-radius:6px;padding:2rem;color:#fff;">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:1.5rem;color:#F5A623;">Unsolicited Applications</h3>
+      <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1.2rem;">Don't see a suitable vacancy? We welcome speculative applications from talented Nigerian professionals at all career levels.</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1.8rem;">Send your CV and a brief cover letter stating your area of expertise and the type of role you are looking for.</p>
+      <a href="contact.html" class="btn-white">Submit Your CV</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="gap:10px;display:flex;align-items:center;">
+        <div class="logo-mark">MG</div>
+        <div><span class="logo-text" style="color:#fff;">MGIG</span><span class="logo-sub" style="color:rgba(255,255,255,0.5);">Energy Group</span></div>
+      </a>
+      <p>MGIG is a leading integrated oil and gas company in Nigeria, delivering end-to-end energy solutions across West Africa with excellence, integrity, and local expertise.</p>
+      <div class="social-links">
+        <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-btn" aria-label="X">𝕏</a>
+        <a href="#" class="social-btn" aria-label="Facebook">f</a>
+        <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About MGIG</a></li>
+        <li><a href="about.html#leadership">Leadership</a></li>
+        <li><a href="about.html#mission">Mission & Vision</a></li>
+        <li><a href="hse.html">HSE Policy</a></li>
+        <li><a href="local-content.html">Local Content</a></li>
+        <li><a href="news.html">News & Media</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#ep">Exploration & Production</a></li>
+        <li><a href="services.html#engineering">Engineering & Consulting</a></li>
+        <li><a href="services.html#oilfield">Oil Field Services</a></li>
+        <li><a href="services.html#downstream">Downstream & Refining</a></li>
+        <li><a href="services.html#trading">Trading & Supply</a></li>
+        <li><a href="services.html#supplychain">Supply Chain</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="contact.html">Get In Touch</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html#vendors">Vendor Registration</a></li>
+        <li><a href="contact.html">Media Enquiries</a></li>
+        <li><a href="tel:09036912596">📞 09036912596</a></li>
+        <li><a href="https://wa.me/2349036912596" target="_blank">💬 WhatsApp Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.08);">
+    <div class="footer-bottom">
+      <span>© 2026 MGIG Energy Group. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/2349036912596" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp" aria-label="WhatsApp">💬</a>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+  function toggleMenu(){
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  window.addEventListener('scroll',()=>{
+    document.getElementById('navbar').style.boxShadow = window.scrollY>40?'0 2px 20px rgba(0,0,0,0.08)':'none';
+    const b=document.getElementById('backTop');
+    if(b) b.classList.toggle('show',window.scrollY>400);
+  });
+</script></body></html>

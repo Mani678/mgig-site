@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/projects", "destination": "/projects.html" },
+    { "source": "/hse", "destination": "/hse.html" },
+    { "source": "/local-content", "destination": "/local-content.html" },
+    { "source": "/news", "destination": "/news.html" },
+    { "source": "/careers", "destination": "/careers.html" },
+    { "source": "/contact", "destination": "/contact.html" }
+  ]
+}
